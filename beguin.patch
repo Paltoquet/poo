@@ -1,0 +1,377 @@
+Index: .idea/jsLibraryMappings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/jsLibraryMappings.xml	(revision )
++++ .idea/jsLibraryMappings.xml	(revision )
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="JavaScriptLibraryMappings">
++    <file url="file://$PROJECT_DIR$" libraries="{poo_service node_modules}" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/encodings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/encodings.xml	(revision )
++++ .idea/encodings.xml	(revision )
+@@ -0,0 +1,4 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
++</project>
+\ No newline at end of file
+Index: .idea/libraries/poo_service_node_modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/libraries/poo_service_node_modules.xml	(revision )
++++ .idea/libraries/poo_service_node_modules.xml	(revision )
+@@ -0,0 +1,14 @@
++<component name="libraryTable">
++  <library name="poo_service node_modules" type="javaScript">
++    <properties>
++      <option name="frameworkName" value="node_modules" />
++      <sourceFilesUrls>
++        <item url="file://$PROJECT_DIR$/node_modules" />
++      </sourceFilesUrls>
++    </properties>
++    <CLASSES>
++      <root url="file://$PROJECT_DIR$/node_modules" />
++    </CLASSES>
++    <SOURCES />
++  </library>
++</component>
+\ No newline at end of file
+Index: app/index.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/index.html	(revision 681711b1fe6d5caae4a05f105ee28d306aeda7ed)
++++ app/index.html	(revision )
+@@ -86,6 +86,7 @@
+ 
+         <!-- build:js({.tmp,app}) scripts/scripts.js -->
+         <script src="scripts/app.js"></script>
++        <script src="scripts/traitement.js"></script>
+         <script src="scripts/controllers/main.js"></script>
+         <script src="scripts/controllers/about.js"></script>
+         <script src="scripts/controllers/users.js"></script>
+Index: .idea/poo_service.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/poo_service.iml	(revision )
++++ .idea/poo_service.iml	(revision )
+@@ -0,0 +1,9 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="WEB_MODULE" version="4">
++  <component name="NewModuleRootManager">
++    <content url="file://$MODULE_DIR$" />
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++    <orderEntry type="library" name="poo_service node_modules" level="project" />
++  </component>
++</module>
+\ No newline at end of file
+Index: app/scripts/app.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/scripts/app.js	(revision 681711b1fe6d5caae4a05f105ee28d306aeda7ed)
++++ app/scripts/app.js	(revision )
+@@ -35,6 +35,10 @@
+         templateUrl: 'views/Users/show.html',
+         controller: 'UsersCtrl'
+       })
++      .when('/project/',{
++        templateUrl:'views/Users/project.html',
++        controller: 'ProjectCtrl'
++      })
+       .otherwise({
+         redirectTo: '/'
+       });
+Index: app/views/about.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/views/about.html	(revision 681711b1fe6d5caae4a05f105ee28d306aeda7ed)
++++ app/views/about.html	(revision )
+@@ -1,1 +1,6 @@
+-<p>This is the about view.</p>
++<p>Recherche</p>
++<p>Prénom: <input type="text" ng-model="user.name"><br>
++Nom: <input type="text" ng-model="user.surname"><br>
++addresse mail: <input type="text" ng-model="user.email"><br>
++site internet: <input type="text" ng-model="user.website"><br>
++  <button ng-click="function()">Go</button></p>
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/modules.xml	(revision )
++++ .idea/modules.xml	(revision )
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/.idea/poo_service.iml" filepath="$PROJECT_DIR$/.idea/poo_service.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: app/views/Users/project.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/views/Users/project.html	(revision )
++++ app/views/Users/project.html	(revision )
+@@ -0,0 +1,12 @@
++<!DOCTYPE html>
++<html>
++<head lang="en">
++    <meta charset="UTF-8">
++    <title></title>
++</head>
++<body>
++<p>
++  Le projet
++</p>
++</body>
++</html>
+Index: .idea/scopes/scope_settings.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/scopes/scope_settings.xml	(revision )
++++ .idea/scopes/scope_settings.xml	(revision )
+@@ -0,0 +1,5 @@
++<component name="DependencyValidationManager">
++  <state>
++    <option name="SKIP_IMPORT_STATEMENTS" value="false" />
++  </state>
++</component>
+\ No newline at end of file
+Index: .idea/vcs.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- .idea/vcs.xml	(revision )
++++ .idea/vcs.xml	(revision )
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="VcsDirectoryMappings">
++    <mapping directory="$PROJECT_DIR$" vcs="Git" />
++  </component>
++</project>
+\ No newline at end of file
+Index: app/scripts/controllers/about.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/scripts/controllers/about.js	(revision 681711b1fe6d5caae4a05f105ee28d306aeda7ed)
++++ app/scripts/controllers/about.js	(revision )
+@@ -7,11 +7,24 @@
+  * # AboutCtrl
+  * Controller of the pooIhmExemplesApp
+  */
+-angular.module('pooIhmExemplesApp')
+-  .controller('AboutCtrl', function ($scope) {
++angular.module('Monservice')
++  .controller('AboutCtrl',['$scope','$http',function ($scope,$http) {
+     $scope.awesomeThings = [
+       'HTML5 Boilerplate',
+       'AngularJS',
+       'Karma'
+     ];
++
++    $scope.user={
++      name: null,
++      surname: null,
++      website: null,
++      email: null
++    };
++
++    $scope.function=function(){
++    $http.post('http://poo-ihm-2015-rest.herokuapp.com/api/Users',$scope.user)
++      .succes(function(data){
+-  });
++      });
++    }
++  }]);
+Index: app/scripts/controllers/users.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/scripts/controllers/users.js	(revision 681711b1fe6d5caae4a05f105ee28d306aeda7ed)
++++ app/scripts/controllers/users.js	(revision )
+@@ -8,24 +8,37 @@
+  * Controller of the pooIhmExemplesApp
+  */
+ angular.module('pooIhmExemplesApp')
+-  .controller('UsersCtrl', ['$scope', '$http', '$routeParams', function ($scope, $http, $routeParams) {
++  .controller('UsersCtrl', ['$scope','traitement', '$http', '$routeParams','$location', function ($scope,traitement, $http, $routeParams, $location) {
+     $scope.awesomeThings = [
+       'HTML5 Boilerplate',
+       'AngularJS',
+       'Karma'
+     ];
++    $scope.rechercher=function(id){
++      var path = $location.path("/projet/"+id);
++      $scope.recherche=$scope.find;
++    }
++  $scope.successCB=function(data){
++    traitement.register(id);
++    $scope.users=data;
++    $scope.find="";
++  }
++    $scope.errorCB=function(){
++      $scope.users={coucou :"caplante"};
+ 
++    }
++    traitement.get(function(successCb,errorCB) {
++
++    }),
+     $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users')
+       .success(function(data) {
+         $scope.users = data.data;
+-      });
+-
+-    if($routeParams.userId) {
++        $scope.find="";
++      }),
+       $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users/' + $routeParams.userId)
+       .success(function(data) {
+         if (data.status == "success") {
+           $scope.currentUser = data.data;
+         }
+-      });
+-    }
++      })
+   }]);
+Index: app/scripts/traitement.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/scripts/traitement.js	(revision )
++++ app/scripts/traitement.js	(revision )
+@@ -0,0 +1,41 @@
++/**
++ * Created by webdev on 4/24/15.
++ */
++
++
++
++angular.module('pooIhmExemplesApp')
++    .service('traitement',['$http',function($http){
++    var info="";
++    this.post=function(data){
++      $http.put('http://poo-ihm-2015-rest.herokuapp.com/api/Users',data)
++    }
++
++    this.register=function(id){
++      info=id;
++    }
++    this.get=function(successCB,errorCB){
++      $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users')
++        .success(function(data) {
++          if(data.status=='success') {
++
++            successCB(data.data);
++          }
++          else{
++            errorCB();
++          }
++    })};
++    this.put=function(data){
++      $http.put('http://poo-ihm-2015-rest.herokuapp.com/api/Users',data)
++    }
++    this.getproject=function(successCB,errorCB){
++      $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/ Users /'+'id'+'/Projects')
++        .success(function(data) {
++          if (data.status == 'success') {
++            successCB(data.data);
++          }
++          else {
++            errorCB();
++          }
++        })};
++  }]);
+Index: app/scripts/controllers/project.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/scripts/controllers/project.js	(revision )
++++ app/scripts/controllers/project.js	(revision )
+@@ -0,0 +1,33 @@
++/**
++ * Created by webdev on 5/12/15.
++ */
++'use strict';
++
++/**
++ * @ngdoc function
++ * @name pooIhmExemplesApp.controller:AboutCtrl
++ * @description
++ * # AboutCtrl
++ * Controller of the pooIhmExemplesApp
++ */
++angular.module('pooIhmExemplesApp')
++  .controller('ProjectCtrl', ['$scope','traitement', '$http', '$routeParams','$location', function ($scope,traitement, $http, $routeParams, $location) {
++    $scope.awesomeThings = [
++      'HTML5 Boilerplate',
++      'AngularJS',
++      'Karma'
++    ];
++
++    $scope.title="";
++    $scope.description="";
++    $scope.year="";
++  var successCB=function(data){
++    $scope.title=data.title;
++    $scope.descriprion=data.description;
++    $scope.year=data.year;
++  }
++    var errorCB=function(data){
++      $scope.title="erreur";
++    }
++
++  }]);
+Index: app/views/Users/list.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- app/views/Users/list.html	(revision 681711b1fe6d5caae4a05f105ee28d306aeda7ed)
++++ app/views/Users/list.html	(revision )
+@@ -1,6 +1,8 @@
+ <div>
++  <p>Name: <input type="text" ng-model="find"></p>
++  <p ng-repeat="user in users | filter:find">{{user.name}} <button ng-click="function()"> Go </button></p>
+ <h3>Liste des utilisateurs:</h3>
+ <ul>
+ <li ng-repeat="user in users"> {{user.name}}, {{user.surname}}</li>
+ </ul>
+-</div>
+\ No newline at end of file
++</div>
