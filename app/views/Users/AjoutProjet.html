@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+<h3>
+  Voici la liste de tous les projets:
+</h3>
+<p>Name: <input type="text" ng-model="find">
+  <button ng-click="var=find"> Go </button></p>
+<p class="project" ng-repeat="project in projects | filter:var">
+  Titre: {{project.title}}<br>
+  Année: {{project.year}}<br>
+  Description: {{project.description}}<br>
+  Crée le {{project.createdAt}}<br>
+  Dernière mise à jour le {{project.updateAt}}<br>
+  </button>  <button ng-click="ajout(project.id)"> Ajouter à ce projet </button>
+  </button>  <button ng-click="supp(project.id)"> Supprimer de ce projet </button>
+</p>
+</body>
+</html>
