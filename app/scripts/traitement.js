@@ -20,7 +20,16 @@ angular.module('pooIhmExemplesApp')
     this.deletefromproject=function(id,idproject){
       $http.delete('http://poo-ihm-2015-rest.herokuapp.com/api/Users/'+id+'/Projects/'+idproject)
     }
-
+    this.getroles=function(id,successCB,errorCB){
+      $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users/'+id+'/Roles')
+        .success(function(data) {
+          if(data.status=='success') {
+            successCB(data);
+          }
+          else{
+            errorCB();
+          }
+    })};
     this.get=function(successCB,errorCB){
       $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users')
         .success(function(data) {

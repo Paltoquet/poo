@@ -32,8 +32,13 @@ angular.module('pooIhmExemplesApp')
       $location.path('/ajouter_projet/'+id).replace()
 
     }
+    $scope.roles="";
 
-
+    traitement.getroles(id,function(data){
+      $scope.roles=data.data;
+    },function(data){
+      $scope.roles="erreur"
+    })
 
     traitement.getproject(function(data) {
       $scope.projects = data.data;

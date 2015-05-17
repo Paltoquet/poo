@@ -30,8 +30,13 @@ body {
   margin-bottom: 10px;
 }
 
+.roles{
+  border-bottom: 3px;
+  border-style: groove;
+  border-color: red;
+}
 .project{
-  border-width: 3px;
+  border-bottom: 3px;
   border-style: groove;
 }
 /* Make the masthead heading the same height as the navigation */
