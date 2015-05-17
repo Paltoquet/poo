@@ -1,8 +1,19 @@
 <div>
-  <p>Name: <input type="text" ng-model="find"></p>
-  <p ng-repeat="user in users | filter:find">{{user.name}} <button ng-click="function()"> Go </button></p>
-<h3>Liste des utilisateurs:</h3>
+  <p>Voici la liste des utilisateurs.<br>
+  Vous pouvez affiner votre recherche en complétant le champs ci dessous et en validant votre sélection<br>
+  <p>Name: <input type="text" ng-model="find">
+  <button ng-click="var=find"> Go </button></p>
+  Vous pouvez aussi directement accéder  à la page de l'utilisteur en appuyant sur le bouton "Voir"<br>
+  Ce dernier vous redirigera sur une nouvelle page à l'aide du service $location et d'un service servant de transit pour les données<br>
+  Le bouton supp comme son nom l'indique vous permet de supprimer un utilisateur et de recharger la page<br>
+
+  </p>
+  <h3>Liste des utilisateurs:</h3>
+  <p ng-repeat="user in users | filter:var">{{user.name}} {{user.id}} <button ng-click="rechercher(user.id,user)"> Voir
+  </button>  <button ng-click="supprimer(user.id)"> Supp </button></p>
 <ul>
+  <!---
 <li ng-repeat="user in users"> {{user.name}}, {{user.surname}}</li>
+--->
 </ul>
 </div>

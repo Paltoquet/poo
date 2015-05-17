@@ -16,11 +16,23 @@ body {
   padding-left: 15px;
   padding-right: 15px;
 }
+.center{
 
+  display: inline-block;
+}
+.photo{
+  padding-left: 100px;
+  display: inline-block;
+}
 /* Custom page header */
 .header {
   border-bottom: 1px solid #e5e5e5;
   margin-bottom: 10px;
+}
+
+.project{
+  border-width: 3px;
+  border-style: groove;
 }
 /* Make the masthead heading the same height as the navigation */
 .header h3 {

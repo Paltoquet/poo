@@ -5,8 +5,24 @@
     <title></title>
 </head>
 <body>
-<p>
-  Le projet
+<h3>Profil</h3>
+<p class="center">
+  Bienvenue sur la Page de <B>{{user.name}}</B> identifié <B>{{id}}</B><br><br>
+  addresse mail: {{user.email}}<br>
+  site internet: {{user.website}}<br>
+  loisirs: <del>League of Legends</del>, Heroes of the storm <br>
+</p>
+<div class="photo">
+  <h4>Avatar</h4>
+<img src="../images/Draykoon.jpg" style="width: 200px;height: 200px">
+</div>
+<h3>Ses projets</h3><br>
+<p></button>  <button ng-click="ajouterprojet()"> Gerer les projets </button></p>
+<p ng-repeat="project in projects">
+  Title : {{project.title}}<br>
+  Description: {{project.description}}<br>
+  Année:{{project.year}}<br>
+  Date de création: {{project.createdAt}}
 </p>
 </body>
 </html>

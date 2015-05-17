@@ -8,37 +8,30 @@
  * Controller of the pooIhmExemplesApp
  */
 angular.module('pooIhmExemplesApp')
-  .controller('UsersCtrl', ['$scope','traitement', '$http', '$routeParams','$location', function ($scope,traitement, $http, $routeParams, $location) {
+  .controller('UsersCtrl', ['$scope','$filter','$route','traitement','save', '$http', '$routeParams','$location', function ($scope,$filter,$route,traitement,save, $http, $routeParams, $location) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',
       'Karma'
     ];
-    $scope.rechercher=function(id){
-      var path = $location.path("/projet/"+id);
-      $scope.recherche=$scope.find;
+    $scope.rechercher=function(id,user){
+
+      //sauvegarde notre utilisateur dans notre service de transit
+      save.saveuser(user,id);
+      //change notre url
+      $location.path('/project/'+id).replace();
     }
-  $scope.successCB=function(data){
-    traitement.register(id);
-    $scope.users=data;
-    $scope.find="";
-  }
-    $scope.errorCB=function(){
+    //service traitement  s'occupe des requetes http
+    traitement.get(function(data){
+      $scope.users=data.data;
+      $scope.find="";
+    },function(){
       $scope.users={coucou :"caplante"};
+    });
 
+    $scope.supprimer=function(id){
+      traitement.supp(function(data){},function(data){},id);
+      setTimeout(function ma(){$route.reload()},1500);
     }
-    traitement.get(function(successCb,errorCB) {
 
-    }),
-    $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users')
-      .success(function(data) {
-        $scope.users = data.data;
-        $scope.find="";
-      }),
-      $http.get('http://poo-ihm-2015-rest.herokuapp.com/api/Users/' + $routeParams.userId)
-      .success(function(data) {
-        if (data.status == "success") {
-          $scope.currentUser = data.data;
-        }
-      })
   }]);
